@@ -1,0 +1,15 @@
+[package]
+name = "tenka1-2012-qualA"
+version = "0.1.0"
+authors = ["wantjoy"]
+edition = "2018"
+
+# dependencies added to new project
+[dependencies]
+proconio = "*"
+# competitive = { git = "https://github.com/tanakh/competitive-rs.git" }
+num = "0.2.1"
+
+[profile.release]
+lto = true
+panic = 'abort'

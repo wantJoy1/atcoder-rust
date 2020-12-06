@@ -1,0 +1,8 @@
+[package]
+ name = "atcoder-rust"
+ version = "0.0.1"
+ authors = [ "Kf <wantJoy1@gmail.com>" ]
+
+[[bin]]
+name = "test"
+path = "src/test.rs"
