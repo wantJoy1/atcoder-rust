@@ -4,9 +4,9 @@ use proconio::{fastout, input};
 fn main() {
     input! {
         n: i32,
-        mut ab: [(i32, i32); n]
+        k: i32,
     }
 
-    ab.sort_by_key(|t| t.1);
-    let ab = ab;
+    let d = k - 1;
+    println!("{}", (n - 1 + d - 1) / d);
 }

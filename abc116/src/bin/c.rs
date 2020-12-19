@@ -3,27 +3,18 @@ use proconio::{fastout, input};
 #[fastout]
 fn main() {
     input! {
-        n: i32,
-        mut h: [i32; n]
+        n: usize,
+        mut h: [usize; n]
     }
 
-    let mut count = 0;
-    while !h.is_empty() && h.contains(&0) {
-        let mut h = h
-            .clone()
-            .into_iter()
-            .skip_while(|&i| i == 0)
-            .take_while(|&i| i != 0)
-            .collect::<Vec<i32>>();
-        count += 1;
-        for &i in &h {
-            if i == 0 {
-                count += 1
-            }
-        }
-        for i in 0..h.len() {
+    let mut ans = 0;
+    while h.iter().any(|&i| i != 0) {
+        ans += 1;
+        let mut i = h.iter().position(|&i| i != 0).unwrap();
+        while i < n && h[i] != 0 {
             h[i] -= 1;
+            i += 1;
         }
     }
-    println!("{}", count);
+    println!("{}", ans);
 }
