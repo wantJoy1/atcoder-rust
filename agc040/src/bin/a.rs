@@ -7,14 +7,9 @@ fn main() {
         s: Chars
     }
 
-    let mut sum: usize = 0;
-    for (i, w) in s.windows(2).enumerate() {
-        dbg!(sum);
-        dbg!(w);
-        dbg!(i);
-        let (prev, next) = (w[0], w[1]);
-        if prev == '>' && next == '<' {
-            sum += i;
-        }
+    let mut l = vec![0; s.len() + 1];
+    let mut r = vec![0; s.len() + 1];
+    for i in 0..s.len() {
+        if s[i] == '<' {}
     }
 }
